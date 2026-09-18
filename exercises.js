@@ -76,10 +76,30 @@ function NombreUn(arr) {
   return arr.length - firstOne;
 }
 
+function triLignes(M) {
+  if (!M || M.length === 0) return M;
+
+  for (let i = 0; i < M.length; i++) {
+    for (let j = i + 1; j < M.length; j++) {
+      const countI = NombreUn(M[i]);
+      const countJ = NombreUn(M[j]);
+
+      if (countJ < countI) {
+        Echanger(M, i, j);
+      }
+    }
+  }
+
+  return M;
+}
+
+
 
 module.exports = {
   NegatifPositif,
   Echanger,
   Ranger,
-  NombreUn
+  NombreUn,
+  triLignes
 };
+
