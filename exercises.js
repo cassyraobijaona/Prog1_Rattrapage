@@ -23,6 +23,12 @@ function NegatifPositif(arr) {
   return arr;
 }
 
+function Echanger(arr, index1, index2) {
+  [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
+  return arr;
+}
+
 module.exports = {
-  NegatifPositif
+  NegatifPositif,
+  Echanger
 };
