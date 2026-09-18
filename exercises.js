@@ -53,9 +53,33 @@ function Ranger(arr) {
   return arr;
 }
 
+function NombreUn(arr) {
+  if (!arr || arr.length === 0) return 0;
+
+  let firstOne = -1;
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (arr[mid] === 1) {
+      firstOne = mid;
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+
+  if (firstOne === -1) return 0;
+
+  
+  return arr.length - firstOne;
+}
+
 
 module.exports = {
   NegatifPositif,
   Echanger,
-  Ranger
+  Ranger,
+  NombreUn
 };
